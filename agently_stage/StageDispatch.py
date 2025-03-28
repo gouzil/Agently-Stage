@@ -132,6 +132,7 @@ class StageDispatchEnvironment:
 
         # 等待所有任务完成
         await asyncio.gather(*tasks, return_exceptions=True)
+        await self._shutdown_loop()
 
 
 class StageDispatch:
